@@ -1,0 +1,16 @@
+﻿<template name="ReadingList">
+    {{#animate type="flip"}}
+    <h1 class="page-title">読書分数の合計 {{totalTime}} 分</h1>
+    {{/animate}}
+
+    <ul class="reading-list">
+        {{#each readingList}}
+            {{#each book}}
+                <li>{{title}} - <span class="amount">{{time}}分 </span></li>
+                
+            {{/each}}
+        {{else}}
+        <li>本を <a href="/read-book">入力</a> して下さい</li>
+        {{/each}}
+    </ul>
+</template>

@@ -1,0 +1,11 @@
+﻿<template name="MainNav">
+    <nav class="main-nav">
+        <ul>
+            {{#if currentUser}}
+                <li class="logout">サインアウト</li>
+            {{else}}
+                <li class="login-toggle">サインイン/新規登録</li>
+            {{/if}}
+        </ul>
+    </nav>
+</template>

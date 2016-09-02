@@ -1,0 +1,18 @@
+﻿<template name="Reads">
+    <div class="container">
+        {{#animate type="rotateIn" delay="200"}}
+        <h1>ようこそ {{username}}</h1>
+        {{/animate}}
+    </div>
+        {{> NewRead}}
+    {{> flashMessages}}
+        <section class="recipes">
+            {{#if Template.subscriptionsReady}}
+            {{#each reads}}
+            {{> Read}}
+            {{/each}}
+            {{else}}
+            <p>{{>spinner}}</p>
+            {{/if}}
+        </section>
+</template>

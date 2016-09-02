@@ -1,0 +1,20 @@
+﻿<template name="Menu">
+    {{#animate type="lightSpeedIn"}}
+    <h1 class="page-title">感想リスト</h1>
+    {{/animate}}
+    {{#each reads}}
+    
+        {{> MenuItem}}
+
+    {{else}}
+        <h3>本を <a href="/read-book">入力</a> してて下さい。</h3>
+    {{/each}}
+</template>
+<template name="MenuItem">
+    <div class="menu-item">
+        <h4>{{dateFormat}}</h4>
+        {{#each book}}
+        <p>{{title}}: {{desc}}</p>
+        {{/each}}     
+    </div>
+</template>

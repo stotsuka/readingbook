@@ -1,0 +1,19 @@
+﻿<template name="Read">
+    <article class="rescipe {{#if inMenu}}in-menu {{/if}}">
+        <h3>入力した本を削除する <i class="fa fa-trash"></i></h3>
+        
+        {{#if $.Session.get 'editMode'}}
+        {{> quickForm collection="Reads" id=updateReadId type="update" doc=this autosave=true}}
+        {{else}}
+           
+            <p>
+                {{#each book}}
+                <span class="amount"> タイトル：{{title}} ( {{time}}分)</span>
+
+                {{/each}}
+            </p>
+             
+       
+            {{/if}}
+</article>
+  </template>
